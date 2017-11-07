@@ -93,15 +93,15 @@ class FreeWorkshop(db.Model):
     __tablename__ = 'freeworkshop'
 
     id = db.Column(db.Integer, primary_key=True)
-    colname = db.Column(db.String(60), unique=True)
-    seminardate = db.Column(db.String(60), unique=True)
-    hodname = db.Column(db.String(60), unique=True)
-    contact = db.Column(db.String(60), unique=True)
+    colname = db.Column(db.String(60), index=True)
+    seminardate = db.Column(db.String(60), index=True)
+    hodname = db.Column(db.String(60), index=True)
+    contact = db.Column(db.String(60), index=True)
     expectations = db.Column(db.String(200))
-    mailsenddate = db.Column(db.String(60), unique=True)
-    followup_date1 = db.Column(db.String(60), unique=True)
+    mailsenddate = db.Column(db.String(60), index=True)
+    followup_date1 = db.Column(db.String(60), index=True)
     remark1 = db.Column(db.String(200))
-    followup_date2 = db.Column(db.String(60), unique=True)
+    followup_date2 = db.Column(db.String(60), index=True)
     remark2 = db.Column(db.String(200))
     
 
@@ -117,16 +117,16 @@ class UpcomingWorkshop(db.Model):
     __tablename__ = 'upcomingworkshop'
 
     id = db.Column(db.Integer, primary_key=True)
-    colname = db.Column(db.String(60), unique=True)
-    seminardate = db.Column(db.String(60), unique=True)
-    hodname = db.Column(db.String(60), unique=True)
-    contact = db.Column(db.String(60), unique=True)
+    colname = db.Column(db.String(60), index=True)
+    seminardate = db.Column(db.String(60), index=True)
+    hodname = db.Column(db.String(60), index=True)
+    contact = db.Column(db.String(60), index=True)
     expectations = db.Column(db.String(200))
-    mailsenddate = db.Column(db.String(60), unique=True)
-    followup1 = db.Column(db.String(60), unique=True)
-    followup2 = db.Column(db.String(60), unique=True)
+    mailsenddate = db.Column(db.String(60), index=True)
+    followup1 = db.Column(db.String(60), index=True)
+    followup2 = db.Column(db.String(60), index=True)
     confirmation = db.Column(db.String(200))
     
 
     def __repr__(self):
-        return '<UpcomungWorkshop: {}>'.format(self.name)
+        return '<UpcomingWorkshop: {}>'.format(self.name)
